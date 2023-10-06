@@ -2,11 +2,13 @@ import { useState } from 'react';
 import { auth, db } from '../../services/firebase';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
-function SendMessage() {
+function SendMessage({ scroll }) {
   const [message, setMessage] = useState("");
 
   async function sendMessage(event: React.FormEvent<HTMLElement>) {
     event.preventDefault();
+    setMessage("");
+    scroll.current.scrollIntoView({behavior: "smooth"});
 
     if(message.trim() === "") {
       alert('Enter a valid message');
@@ -22,7 +24,6 @@ function SendMessage() {
       createdAt: serverTimestamp(),
       uid,
     });
-    setMessage("");
   }
 
   return (
