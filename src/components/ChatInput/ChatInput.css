@@ -1,0 +1,43 @@
+.send-message {
+    position: sticky;
+    bottom: 0px;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #001329;
+    border: 1px white solid;
+    border-radius: 5px;
+    display: flex;
+  }
+  .send-message > input {
+    height: 40px;
+    padding: 10px 10px;
+    border-radius: 5px 0 0 5px;
+    border: none;
+    flex-grow: 1;
+    background-color: transparent;
+    color: #1c2c4c;
+    font-size: 1.2rem;
+  }
+  .send-message > input:placeholder {
+    color: #ddd;
+  }
+  .send-message > :is(input, button):focus {
+    outline: none;
+  }
+  .send-message > button {
+    display: flex;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #242443;
+    border: 1px solid #2f83e4;
+    background-color: #2f83e4;
+    font-weight: 600;
+  }
+
+  .submit-img {
+    width: auto;
+    height: 30px;
+  }
