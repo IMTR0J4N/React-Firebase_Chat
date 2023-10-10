@@ -22,9 +22,9 @@ function App() {
       ])
 
     return (
-        <div className='app'>
+        <main className='app'>
           <RouterProvider router={Router}/>
-        </div>
+        </main>
     )
 }
 

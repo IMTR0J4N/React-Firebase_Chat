@@ -15,7 +15,7 @@
     border: none;
     flex-grow: 1;
     background-color: transparent;
-    color: #1c2c4c;
+    color: white;
     font-size: 1.2rem;
   }
   .send-message > input:placeholder {

@@ -1,13 +1,10 @@
 import { useState } from 'react';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { Navigate } from 'react-router-dom';
 import { auth, db } from '../../services/firebase';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import './ChatInput.css';
 
 function SendMessage({ scroll }) {
   const [message, setMessage] = useState("");
-  const [user] = useAuthState(auth);
 
   async function sendMessage(event) {
     event.preventDefault();
@@ -30,11 +27,8 @@ function SendMessage({ scroll }) {
     });
   }
 
-  if(!user) {
-    <Navigate redirect to="/"/>
-  } else {
     return (
-      <form className="send-message" onSubmit={(event) => sendMessage(event)}>
+      <form className="send-message" onSubmit={(event) => sendMessage(event)} autoComplete='off'>
         <label htmlFor="messageInput" hidden>
           Enter Message
         </label>
@@ -51,9 +45,7 @@ function SendMessage({ scroll }) {
           <img className='submit-img' src="/src/assets/send-btn.png"/>
         </button>
       </form>
-    );
-  }
-  
+    );  
   };
   
   export default SendMessage;
