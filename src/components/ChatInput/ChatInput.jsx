@@ -3,21 +3,20 @@ import { auth, db } from '../../services/firebase';
 import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 import './ChatInput.css';
 
-function SendMessage({ scroll }) {
+function SendMessage() {
   const [message, setMessage] = useState("");
 
   async function sendMessage(event) {
     event.preventDefault();
     setMessage("");
-    scroll.current.scrollIntoView(false, {behavior: "smooth"});
-
+    
     if(message.trim() === "") {
       alert('Enter a valid message');
       return;
     }
-
+    
     const { uid, displayName, photoURL } = auth.currentUser;
-
+    
     await addDoc(collection(db, "messages"), {
       text: message,
       name: displayName,
@@ -25,8 +24,9 @@ function SendMessage({ scroll }) {
       createdAt: serverTimestamp(),
       uid,
     });
+    
   }
-
+  
     return (
       <form className="send-message" onSubmit={(event) => sendMessage(event)} autoComplete='off'>
         <label htmlFor="messageInput" hidden>

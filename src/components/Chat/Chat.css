@@ -1,14 +1,17 @@
 .chat-box {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100%;
+  width: 35vw;
+  margin-left: 45vw;
 }
 
 .messages-wrapper {
   background-color: #001329;
   position: relative;
-  margin-left: 25vw;
   height: 90vh;
   width: 35vw;
   padding: 30px 50px 30px 60px;

@@ -32,12 +32,13 @@ function ChatBox() {
             );
 
             setMessages(sortedMessages)
+            scroll.current.scrollIntoView({ behavior: "smooth" });
         });
-
+        
         return () => unsubscribe;
     }, [])
     if(!user) {
-        <Navigate redirect to="/"/>
+       return <Navigate redirect to="/"/>
       } else {
             return (
                 <>
@@ -45,11 +46,11 @@ function ChatBox() {
                     <div className="chat-box">
                         <div className="messages-wrapper">
                         {messages?.map((message) => (
-                            <ChatBubble key={message.id} message={message} />
+                            <ChatBubble scroll={scroll} key={message.id} message={message} />
                         ))} 
                         <span ref={scroll}></span>
-                        <ChatInput scroll={scroll} />
                         </div>
+                        <ChatInput />
                     </div>
                 </>
             );

@@ -9,7 +9,7 @@
     display: flex;
   }
   .send-message > input {
-    height: 40px;
+    height: 100%;
     padding: 10px 10px;
     border-radius: 5px 0 0 5px;
     border: none;

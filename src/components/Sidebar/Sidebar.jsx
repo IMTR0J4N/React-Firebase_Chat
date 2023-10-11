@@ -1,10 +1,9 @@
 import './Sidebar.css';
 import { auth } from '../../services/firebase';
-import { redirect } from 'react-router-dom';
 
 function Sidebar() {
     function signOut() {
-        return redirect("/")
+        auth.signOut();
     }
 
     return (
