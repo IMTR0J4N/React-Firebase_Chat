@@ -39,7 +39,7 @@ function SendMessage() {
           name="messageInput"
           type="text"
           className="form-input__input"
-          placeholder="type message..."
+          placeholder="Write a message ..."
         />
         <button type="submit">
           <img className='submit-img' src="/src/assets/send-btn.png"/>
