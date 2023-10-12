@@ -1,0 +1,106 @@
+.aside {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 15vw;
+    border-radius: 10px 0px 0px 10px;
+    background-color: #001329;
+}
+
+.aside > ul {
+    position: relative;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.aside > ul li {
+    position: static;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 100%;
+    color: white;
+}
+
+.aside > ul li img {
+    width: auto;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.aside > ul li:hover {
+    border-left: #2F83E4 solid 5px;
+    color: #2F83E4;
+}
+
+.dropbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    width: 100%;
+}
+
+.dropbtn > img {
+    width: auto;
+    height: 35px;
+    border-radius: 50%;
+}
+
+.dropbtn > span {
+    font-size: 12px;
+}
+
+.dropdown {
+    position: absolute;
+    display: inline-block;
+    bottom: 0;
+    width: 100%;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1b2a49;
+    height: 100px;
+    width: 90%;
+    left: 5%;
+    bottom: 60px;
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.dropdown-content > ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    color: white;
+}
+
+.dropdown-content > ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+}
+
+.dropdown-content > ul li:hover {
+    background-color: #19253d;
+}
+
+.dropdown:hover .dropdown-content {display: block;}

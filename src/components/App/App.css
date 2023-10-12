@@ -1,0 +1,7 @@
+.app {
+    position: relative;
+    height: 95vh;
+    width: 95vw;
+    border-radius: 10px;
+    background-color: #002047;
+}
