@@ -1,21 +1,50 @@
-import { auth } from "../../services/firebase";
+import { auth, db } from "../../services/firebase";
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
+import { query, collection, addDoc, onSnapshot } from "firebase/firestore";
 import GoogleSignin from "../../assets/google.jpg";
-import GithubSignin from "../../assets/github.png"
 import { Navigate } from "react-router-dom";
 import './Login.css'
+import { useEffect } from "react";
 
 function Login() {
 
     const [user, loading] = useAuthState(auth)
 
+    useEffect(() => {
+        if(user) {
+            const q = query(
+                collection(db, 'user'),
+            )
+    
+            onSnapshot(q, (QuerySnapshot) => {
+                let createUser = true;
+    
+                console.log(QuerySnapshot)
+    
+                QuerySnapshot.forEach((doc) => {
+                    if(doc.data().id === user.uid) {
+                        createUser = false;
+                    }
+                })
+    
+                if(createUser) {
+                    addDoc(collection(db, 'user'), {
+                        id: user.uid,
+                        name: user.displayName,
+                        avatar: user.photoURL        
+                    })
+                }
+            })
+        }
+    }, [user])
+
     const SignIn = (provider) => {
         signInWithRedirect(auth, provider);
     };
 
+
     if(user) {
-        console.log(user, "user")
         return <Navigate replace to="/"/>
     } else if (loading) {
         console.log(user, "loading")

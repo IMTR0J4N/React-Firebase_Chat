@@ -1,7 +1,7 @@
 import ChatBubble from "../ChatBubble/ChatBubble";
 import ChatInput from "../ChatInput/ChatInput";
 import { useEffect, useRef, useState } from 'react';
-import { query, collection, orderBy, onSnapshot, limit, QuerySnapshot } from 'firebase/firestore';
+import { query, collection, orderBy, onSnapshot, limit } from 'firebase/firestore';
 import { auth, db } from "../../services/firebase";
 import { Navigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
