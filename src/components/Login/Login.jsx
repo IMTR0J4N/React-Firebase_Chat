@@ -20,8 +20,6 @@ function Login() {
             onSnapshot(q, (QuerySnapshot) => {
                 let createUser = true;
     
-                console.log(QuerySnapshot)
-    
                 QuerySnapshot.forEach((doc) => {
                     if(doc.data().id === user.uid) {
                         createUser = false;
@@ -47,7 +45,6 @@ function Login() {
     if(user) {
         return <Navigate replace to="/"/>
     } else if (loading) {
-        console.log(user, "loading")
         return (
             <>
             <h2>Loading User, please wait...</h2>
