@@ -36,8 +36,8 @@ function Login() {
                 <div className="login-container">
                     <h1>Sign UP</h1>
                     <div className="sign-in-container">
-                        <button className="google-sign-in">
-                            <img src={GoogleSignin} onClick={() => (SignIn(new GoogleAuthProvider()))} /> 
+                        <button className="google-sign-in" onClick={() => (SignIn(new GoogleAuthProvider()))}>
+                            <img src={GoogleSignin} /> 
                         </button>
                     </div>
                 </div> 
