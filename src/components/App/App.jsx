@@ -19,7 +19,7 @@ function App() {
           path: '/chat',
           element: <Chatbox />
         }
-      ])
+      ]);
 
     return (
         <main className='app'>

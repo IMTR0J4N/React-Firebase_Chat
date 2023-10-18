@@ -38,7 +38,7 @@ function ChatBox() {
         return () => unsubscribe;
     }, [])
     if(!user) {
-       return <Navigate redirect to="/"/>
+       return <Navigate redirect to="/login"/>
       } else {
             return (
                 <>
