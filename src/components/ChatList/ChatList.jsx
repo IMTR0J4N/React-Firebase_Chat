@@ -3,6 +3,7 @@ import { matchPath } from 'react-router-dom';
 import './ChatList.css'
 import { collection, onSnapshot, query } from 'firebase/firestore';
 import { db } from '../../services/firebase';
+import CreateGroup from '../CreateGroup/CreateGroup';
 
 function ChatList() {
 
@@ -30,12 +31,13 @@ function ChatList() {
     }, []);
     return(
         <>
+            {userInGroupChat ? <CreateGroup /> : ''}
             <div className="chat-list">
                 <nav className="chat-list--nav">
                     <ul className="chat-list--ul">
                         {list?.map((el) => {
                             <li className='chat-list--li'>
-                                <a href={`/group/${el.id}`}>{el.name}</a>
+                                <a href={`/${userInGroupChat ? 'group' : 'dm'}/${el.id}`}>{el.name}</a>
                             </li>
                         })}
                     </ul>
