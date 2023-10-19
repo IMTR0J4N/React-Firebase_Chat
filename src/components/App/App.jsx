@@ -16,9 +16,9 @@ function App() {
           element: <Login />
         },
         {
-          path: '/chat',
+          path: '/chat/group/:id',
           element: <Chatbox />
-        }
+        },
       ]);
 
     return (

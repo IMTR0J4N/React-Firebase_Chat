@@ -8,7 +8,7 @@ function Welcome() {
   const [user] = useAuthState(auth);
 
   if(user) {
-    return <Navigate redirect to="/chat"/>
+    return <Navigate redirect to="/chat/group"/>
   } else {
     return (
       <main className="welcome">

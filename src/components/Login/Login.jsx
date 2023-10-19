@@ -43,7 +43,7 @@ function Login() {
 
 
     if(user) {
-        return <Navigate replace to="/"/>
+        return <Navigate replace to="/chat/group/1"/>
     } else if (loading) {
         return (
             <>

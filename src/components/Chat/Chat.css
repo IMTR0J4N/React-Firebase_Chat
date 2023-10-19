@@ -4,19 +4,22 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 100%;
-  width: 35vw;
-  margin-left: 45vw;
+  height: 90%;
+  width: 45vw;
+  margin-top: 50px;
+  margin-left: 35vw;
+  border-radius: 10px;
 }
 
 .messages-wrapper {
   background-color: #001329;
   position: relative;
   height: 90vh;
-  width: 35vw;
+  width: 100%;
   padding: 30px 50px 30px 60px;
   overflow-y: scroll;
-
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .messages-wrapper::-webkit-scrollbar-track {

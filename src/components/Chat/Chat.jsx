@@ -7,6 +7,7 @@ import { Navigate } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import './Chat.css';
 import Sidebar from "../Sidebar/Sidebar";
+import ChatList from "../ChatList/ChatList";
 
 function ChatBox() {
 
@@ -43,6 +44,7 @@ function ChatBox() {
             return (
                 <>
                     <Sidebar />
+                    <ChatList />
                     <div className="chat-box">
                         <div className="messages-wrapper">
                         {messages?.map((message) => (
